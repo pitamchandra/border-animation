@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button border animation</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .box{
+            width: 360px;
+            height: 400px;
+            background-color: transparent;
+            border-radius: 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 5px;
+        }
+        .box::after {
+            content: "";
+            width: 150%;
+            height: 150%;
+            background-image: conic-gradient(transparent, transparent, transparent, #fcc100);
+            border-radius: 15px;
+            position: absolute;
+            animation: effect 4s linear infinite;
+            animation-delay: -2s;
+        }
+        .box::before {
+            content: "";
+            width: 150%;
+            height: 150%;
+            background-image: conic-gradient(transparent, transparent, transparent, #37fc00);
+            border-radius: 15px;
+            position: absolute;
+            animation: effect 4s linear infinite;
+        }
+        @keyframes effect {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .box_inner{
+            width: 100%;
+            height: 100%;
+            background-color: #ffdcdc;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box_inner">
+            <h2>lala</h2>
+        </div>
+    </div>
+</body>
+</html>
